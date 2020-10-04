@@ -1,9 +1,9 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  DataTransferService.swift
+//  Multi Care
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright (c) ___YEAR___ All rights reserved.
+//  Created by Arif Luthfiansyah on 01/04/20.
+//  Copyright (c) 2020 All rights reserved.
 //
 
 import Foundation
@@ -15,12 +15,24 @@ public enum DataTransferError: Error {
     case resolvedNetworkFailure(Error)
 }
 
+public struct CompletionHandlerResponse<T> {
+    public let body: Result<T, Error>
+    public let headers: [AnyHashable : Any]
+    public let statusCode: Int
+}
+
 public protocol DataTransferService {
-    typealias CompletionHandler<T> = (Result<T, Error>) -> Void
+    typealias CompletionHandler<T> = (
+        _ body: (Result<T, Error>),
+        _ headers: [AnyHashable : Any],
+        _ httpStatusCode: HTTPStatusCode?
+        ) -> Void
     
     @discardableResult
-    func request<T: Decodable, E: ResponseRequestable>(with endpoint: E,
-                                                       completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T
+    func request<T: Decodable, E: ResponseRequestable>(
+        with endpoint: E,
+        completion: @escaping CompletionHandler<T>
+    ) -> NetworkCancellable? where E.Response == T
 }
 
 public protocol DataTransferErrorResolver {
@@ -52,18 +64,19 @@ public final class DefaultDataTransferService {
 
 extension DefaultDataTransferService: DataTransferService {
     
-    public func request<T: Decodable, E: ResponseRequestable>(with endpoint: E,
-                                                              completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T {
-
-        return self.networkService.request(endpoint: endpoint) { result in
+    public func request<T: Decodable, E: ResponseRequestable>(
+        with endpoint: E,
+        completion: @escaping CompletionHandler<T>
+    ) -> NetworkCancellable? where E.Response == T {
+        return self.networkService.request(endpoint: endpoint) { (result, headers, httpStatusCode) in
             switch result {
             case .success(let data):
                 let result: Result<T, Error> = self.decode(data: data, decoder: endpoint.responseDecoder)
-                DispatchQueue.main.async { return completion(result) }
+                DispatchQueue.main.async { return completion(result, headers, httpStatusCode) }
             case .failure(let error):
                 self.errorLogger.log(error: error)
                 let error = self.resolve(networkError: error)
-                DispatchQueue.main.async { return completion(.failure(error)) }
+                DispatchQueue.main.async { return completion(.failure(error), headers, httpStatusCode) }
             }
         }
     }

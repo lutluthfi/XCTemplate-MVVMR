@@ -11,38 +11,47 @@
 
 import Foundation
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponse
 enum ___VARIABLE_sceneIdentifier___ViewModelResponse {
 }
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelDelegate
 protocol ___VARIABLE_sceneIdentifier___ViewModelDelegate: class {
 }
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelRequestValue
 struct ___VARIABLE_sceneIdentifier___ViewModelRequestValue {
 }
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelRoute
 struct ___VARIABLE_sceneIdentifier___ViewModelRoute {
 }
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelInput
 protocol ___VARIABLE_sceneIdentifier___ViewModelInput {
 
     func viewDidLoad()
 
 }
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelOutput
 protocol ___VARIABLE_sceneIdentifier___ViewModelOutput {
 }
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModel
 protocol ___VARIABLE_sceneIdentifier___ViewModel:
 ___VARIABLE_sceneIdentifier___ViewModelInput,
 ___VARIABLE_sceneIdentifier___ViewModelOutput { }
 
+// MARK: - Default___VARIABLE_sceneIdentifier___ViewModel
 class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
-    
+
+    // MARK: - DI Variable
     private weak var delegate: ___VARIABLE_sceneIdentifier___ViewModelDelegate?
     private let requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
     private let route: ___VARIABLE_sceneIdentifier___ViewModelRoute
 
-    // MARK: - UseCase
+    // MARK: - UseCase Variable
 
 
 
@@ -51,7 +60,10 @@ class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifie
     
 
     // MARK: - Output ViewModel
+
     
+
+    // MARK: - Init Function
     init(
         requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue,
         route: ___VARIABLE_sceneIdentifier___ViewModelRoute

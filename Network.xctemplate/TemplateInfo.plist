@@ -12,6 +12,30 @@
 	<array>
 		<dict>
 			<key>Description</key>
+			<string>HTTPStatusCode</string>
+			<key>Identifier</key>
+			<string>httpStatusCode</string>
+			<key>Name</key>
+			<string>This file will be created as HTTPStatusCode by default</string>
+			<key>Required</key>
+			<false/>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>Cancellable</string>
+			<key>Identifier</key>
+			<string>cancellable</string>
+			<key>Name</key>
+			<string>This file will be created as Cancellable.swift by default</string>
+			<key>Required</key>
+			<false/>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+		<dict>
+			<key>Description</key>
 			<string>DataTransferService</string>
 			<key>Identifier</key>
 			<string>dataTransferService</string>

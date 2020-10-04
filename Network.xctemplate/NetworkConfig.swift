@@ -1,9 +1,9 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  NetworkConfig.swift
+//  Multi Care
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright (c) ___YEAR___ All rights reserved.
+//  Created by Arif Luthfiansyah on 01/04/20.
+//  Copyright (c) 2020 All rights reserved.
 //
 
 import Foundation
@@ -19,9 +19,11 @@ public struct ApiDataNetworkConfig: NetworkConfigurable {
     public let headers: [String: String]
     public let queryParameters: [String: String]
     
-     public init(baseURL: URL,
-                 headers: [String: String] = [:],
-                 queryParameters: [String: String] = [:]) {
+    public init(
+        baseURL: URL,
+        headers: [String: String] = [:],
+        queryParameters: [String: String] = [:]
+    ) {
         self.baseURL = baseURL
         self.headers = headers
         self.queryParameters = queryParameters

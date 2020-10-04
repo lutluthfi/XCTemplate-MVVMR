@@ -1,12 +1,24 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  NetworkService.swift
+//  Multi Care
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright (c) ___YEAR___ All rights reserved.
+//  Created by Arif Luthfiansyah on 01/04/20.
+//  Copyright (c) 2020 All rights reserved.
 //
 
 import Foundation
+
+public struct NetworkTask: Cancellable {
+    private let networkCancellable: NetworkCancellable?
+    
+    public init(request networkCancellable: NetworkCancellable?) {
+        self.networkCancellable = networkCancellable
+    }
+    
+    public func cancel() {
+        self.networkCancellable?.cancel()
+    }
+}
 
 public enum NetworkError: Error {
     case error(statusCode: Int, data: Data?)
@@ -23,9 +35,16 @@ public protocol NetworkCancellable {
 extension URLSessionTask: NetworkCancellable { }
 
 public protocol NetworkService {
-    typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
+    typealias CompletionHandler = (
+        _ body: Result<Data?, NetworkError>,
+        _ headers: [AnyHashable : Any],
+        _ httpStatusCode: HTTPStatusCode?
+        ) -> Void
     
-    func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable?
+    func request(
+        endpoint: Requestable,
+        completion: @escaping CompletionHandler
+    ) -> NetworkCancellable?
 }
 
 public protocol NetworkSessionManager {
@@ -60,7 +79,8 @@ public final class DefaultNetworkService {
     private func request(request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
         
         let sessionDataTask = sessionManager.request(request) { data, response, requestError in
-            
+            let headers = (response as? HTTPURLResponse)?.allHeaderFields ?? [:]
+            let httpStatusCode = (response as? HTTPURLResponse)?.httpStatusCode
             if let requestError = requestError {
                 var error: NetworkError
                 if let response = response as? HTTPURLResponse {
@@ -70,15 +90,15 @@ public final class DefaultNetworkService {
                 }
                 
                 self.logger.log(error: error)
-                completion(.failure(error))
+                completion(.failure(error), headers, httpStatusCode)
             } else {
                 self.logger.log(responseData: data, response: response)
-                completion(.success(data))
+                completion(.success(data), headers, httpStatusCode)
             }
         }
-    
+        
         logger.log(request: request)
-
+        
         return sessionDataTask
     }
     
@@ -99,7 +119,7 @@ extension DefaultNetworkService: NetworkService {
             let urlRequest = try endpoint.urlRequest(with: config)
             return request(request: urlRequest, completion: completion)
         } catch {
-            completion(.failure(.urlGeneration))
+            completion(.failure(.urlGeneration), [:], nil)
             return nil
         }
     }

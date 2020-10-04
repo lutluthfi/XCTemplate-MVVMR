@@ -11,10 +11,28 @@
 
 import UIKit
 
+// MARK: - ___VARIABLE_sceneIdentifier___ViewController
 class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
-    
+
+    // MARK: - Public Component View Variable
+
+
+
+    // MARK: - @IBOutlet Variable
+
+
+
+    // MARK: - Private Component View Variable
+
+
+
+    // MARK: - DI Variable
     private var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
-    
+
+    // MARK: - Common Variable
+
+
+    // MARK: - Create Function
     class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___ViewController {
         let vc = ___VARIABLE_sceneIdentifier___ViewController.instantiateViewController()
         vc.viewModel = viewModel
@@ -43,11 +61,13 @@ class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Storyboard
 
     
 
-    // MARK: - Private Function
+    // MARK: - Bind ViewModel Function
     private func bind(to viewModel: ___VARIABLE_sceneIdentifier___ViewModel) {
     }
-    
+
+    // MARK: - SetupView By Lifecycle Function
     private func setupViewDidLoad() {
+        self.implementComponentView()
     }
     
     private func setupViewWillAppear() {
@@ -59,6 +79,20 @@ class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Storyboard
 }
 
 // MARK: - Observe ViewModel Function
-extension ___VARIABLE_sceneIdentifier___ViewController {
+private extension ___VARIABLE_sceneIdentifier___ViewController {
+
+}
+
+// MARK: - Other Private Function
+private extension ___VARIABLE_sceneIdentifier___ViewController {
+
+}
+
+// MARK: - Component View Function
+private extension ___VARIABLE_sceneIdentifier___ViewController {
+
+    func implementComponentView() {
+
+    }
 
 }

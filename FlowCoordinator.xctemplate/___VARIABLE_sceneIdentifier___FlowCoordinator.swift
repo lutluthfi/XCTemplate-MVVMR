@@ -9,23 +9,32 @@
 import Foundation
 import UIKit
 
+// MARK: - ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory
 protocol ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory  {
     func make___VARIABLE_sceneIdentifier___ViewController() -> UIViewController
 }
 
+// MARK: - ___VARIABLE_sceneIdentifier___FlowCoordinator
 class ___VARIABLE_sceneIdentifier___FlowCoordinator {
+
+    // MARK: - Instructor Enum
     enum Instructor {
         case initial
     }
-    
+
+    // MARK: - DI Variable
     private let navigationController: UINavigationController
     private let factory: ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory
 
+
+    // MARK: - Init Funciton
     init(navigationController: UINavigationController, factory: ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory) {
         self.navigationController = navigationController
         self.factory = factory
     }
-    
+
+
+    // MARK: - Start Function
     func start(with instructor: Instructor) {
     }
     
