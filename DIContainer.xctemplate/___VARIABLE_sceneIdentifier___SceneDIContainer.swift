@@ -10,19 +10,9 @@ import Foundation
 
 final class ___VARIABLE_sceneIdentifier___SceneDIContainer {
     
-    struct Dependencies {
-        
-    }
-    
     private let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
-    
-    // MARK: - UseCase
-    
-    // MARK: - Repositories
-    
-    // MARK: - [Name] Scene
 }

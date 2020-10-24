@@ -14,18 +14,6 @@ import UIKit
 // MARK: - ___VARIABLE_sceneIdentifier___ViewController
 class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
 
-    // MARK: - Public Component View Variable
-
-
-
-    // MARK: - @IBOutlet Variable
-
-
-
-    // MARK: - Private Component View Variable
-
-
-
     // MARK: - DI Variable
     private var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
@@ -57,17 +45,12 @@ class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Storyboard
         self.setupViewWillDisappear()
     }
 
-    // MARK: - @objc Function
-
-    
-
     // MARK: - Bind ViewModel Function
     private func bind(to viewModel: ___VARIABLE_sceneIdentifier___ViewModel) {
     }
 
     // MARK: - SetupView By Lifecycle Function
     private func setupViewDidLoad() {
-        self.implementComponentView()
     }
     
     private func setupViewWillAppear() {
@@ -80,19 +63,5 @@ class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Storyboard
 
 // MARK: - Observe ViewModel Function
 private extension ___VARIABLE_sceneIdentifier___ViewController {
-
-}
-
-// MARK: - Other Private Function
-private extension ___VARIABLE_sceneIdentifier___ViewController {
-
-}
-
-// MARK: - Component View Function
-private extension ___VARIABLE_sceneIdentifier___ViewController {
-
-    func implementComponentView() {
-
-    }
 
 }

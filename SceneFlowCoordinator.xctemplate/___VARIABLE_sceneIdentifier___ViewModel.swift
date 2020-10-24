@@ -11,8 +11,12 @@
 
 import Foundation
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponse
-enum ___VARIABLE_sceneIdentifier___ViewModelResponse {
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponseFailure
+enum ___VARIABLE_sceneIdentifier___ViewModelResponseFailure {
+}
+
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponseSuccess
+enum ___VARIABLE_sceneIdentifier___ViewModelResponseSuccess {
 }
 
 // MARK: - ___VARIABLE_sceneIdentifier___ViewModelDelegate
@@ -36,12 +40,17 @@ protocol ___VARIABLE_sceneIdentifier___ViewModelInput {
 
 // MARK: - ___VARIABLE_sceneIdentifier___ViewModelOutput
 protocol ___VARIABLE_sceneIdentifier___ViewModelOutput {
+
+    // Uncomment these following codes after you make sure Observable class is available to access
+    //
+    // var responseFailure: Observable<___VARIABLE_sceneIdentifier___ViewModelResponseFailure?> { get }
+    // var responseSuccess: Observable<___VARIABLE_sceneIdentifier___ViewModelResponseSuccess?> { get }
+
 }
 
 // MARK: - ___VARIABLE_sceneIdentifier___ViewModel
-protocol ___VARIABLE_sceneIdentifier___ViewModel:
-___VARIABLE_sceneIdentifier___ViewModelInput,
-___VARIABLE_sceneIdentifier___ViewModelOutput { }
+protocol ___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModelInput,
+                                                  ___VARIABLE_sceneIdentifier___ViewModelOutput { }
 
 // MARK: - Default___VARIABLE_sceneIdentifier___ViewModel
 class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
@@ -60,7 +69,8 @@ class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifie
     
 
     // MARK: - Output ViewModel
-
+    // let responseFailure = Observable<___VARIABLE_sceneIdentifier___ViewModelResponseFailure?>(nil)
+    // let responseSuccess = Observable<___VARIABLE_sceneIdentifier___ViewModelResponseSuccess?>(nil)
     
 
     // MARK: - Init Function
