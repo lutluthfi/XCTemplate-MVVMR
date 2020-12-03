@@ -11,12 +11,8 @@
 
 import Foundation
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponseFailure
-enum ___VARIABLE_sceneIdentifier___ViewModelResponseFailure {
-}
-
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponseSuccess
-enum ___VARIABLE_sceneIdentifier___ViewModelResponseSuccess {
+// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponse
+enum ___VARIABLE_sceneIdentifier___ViewModelResponse {
 }
 
 // MARK: - ___VARIABLE_sceneIdentifier___ViewModelDelegate
@@ -41,10 +37,7 @@ protocol ___VARIABLE_sceneIdentifier___ViewModelInput {
 // MARK: - ___VARIABLE_sceneIdentifier___ViewModelOutput
 protocol ___VARIABLE_sceneIdentifier___ViewModelOutput {
 
-    // Uncomment these following codes after you make sure Observable class is available to access
-    //
-    // var responseFailure: Observable<___VARIABLE_sceneIdentifier___ViewModelResponseFailure?> { get }
-    // var responseSuccess: Observable<___VARIABLE_sceneIdentifier___ViewModelResponseSuccess?> { get }
+    var response: Observable<___VARIABLE_sceneIdentifier___ViewModelResponse?> { get }
 
 }
 
@@ -53,12 +46,12 @@ protocol ___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___
                                                   ___VARIABLE_sceneIdentifier___ViewModelOutput { }
 
 // MARK: - Default___VARIABLE_sceneIdentifier___ViewModel
-class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
+final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
 
     // MARK: - DI Variable
-    private weak var delegate: ___VARIABLE_sceneIdentifier___ViewModelDelegate?
-    private let requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
-    private let route: ___VARIABLE_sceneIdentifier___ViewModelRoute
+    weak var delegate: ___VARIABLE_sceneIdentifier___ViewModelDelegate?
+    let requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
+    let route: ___VARIABLE_sceneIdentifier___ViewModelRoute
 
     // MARK: - UseCase Variable
 
@@ -69,8 +62,7 @@ class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifie
     
 
     // MARK: - Output ViewModel
-    // let responseFailure = Observable<___VARIABLE_sceneIdentifier___ViewModelResponseFailure?>(nil)
-    // let responseSuccess = Observable<___VARIABLE_sceneIdentifier___ViewModelResponseSuccess?>(nil)
+    let response = Observable<___VARIABLE_sceneIdentifier___ViewModelResponse?>(nil)
     
 
     // MARK: - Init Function

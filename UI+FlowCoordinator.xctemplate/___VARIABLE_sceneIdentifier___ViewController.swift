@@ -12,7 +12,7 @@
 import UIKit
 
 // MARK: - ___VARIABLE_sceneIdentifier___ViewController
-class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
+final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
 
     // MARK: - DI Variable
     private var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
