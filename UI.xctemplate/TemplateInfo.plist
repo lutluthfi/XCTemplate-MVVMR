@@ -25,6 +25,8 @@
 			<string>text</string>
 		</dict>
 		<dict>
+			<key>NotPersisted</key>
+			<true/>
 			<key>Default</key>
 			<string>___VARIABLE_sceneName:identifier___</string>
 			<key>Identifier</key>
@@ -33,6 +35,8 @@
 			<string>static</string>
 		</dict>
 		<dict>
+			<key>NotPersisted</key>
+			<true/>
 			<key>Default</key>
 			<string>___VARIABLE_sceneIdentifier___ViewController</string>
 			<key>Description</key>
@@ -47,6 +51,8 @@
 			<string>static</string>
 		</dict>
 		<dict>
+			<key>NotPersisted</key>
+			<true/>
 			<key>Default</key>
 			<string>___VARIABLE_sceneIdentifier___ViewModel</string>
 			<key>Description</key>
@@ -61,6 +67,8 @@
 			<string>static</string>
 		</dict>
 		<dict>
+			<key>NotPersisted</key>
+			<true/>
 			<key>Default</key>
 			<string>___VARIABLE_sceneIdentifier___ViewController</string>
 			<key>Description</key>
