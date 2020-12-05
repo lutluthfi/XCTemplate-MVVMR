@@ -23,15 +23,15 @@ final class ___VARIABLE_sceneIdentifier___View: UIView {
 
     init() {
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
-        self.subviewDidInit()
-        self.subviewConstraintDidInit()
+        self.addSubviews()
+        self.makeConstraints()
     }
 
-    // MARK: Subview Init Function
-    private func subviewDidInit() {
+    // MARK: Private Function
+    private func addSubviews() {
     }
 
-    private func subviewConstraintDidInit() {
+    private func makeConstraints() {
     }
 
 }
