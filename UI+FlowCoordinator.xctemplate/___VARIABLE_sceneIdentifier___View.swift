@@ -30,7 +30,6 @@ final class ___VARIABLE_sceneIdentifier___View: UIView {
         self.makeConstraints()
     }
 
-    // MARK: Private Function
     private func addSubviews() {
     }
 
