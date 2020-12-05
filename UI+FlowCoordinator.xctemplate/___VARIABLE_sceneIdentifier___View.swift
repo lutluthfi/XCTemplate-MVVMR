@@ -14,6 +14,8 @@ import UIKit
 // MARK: _ ___VARIABLE_sceneIdentifier___View
 final class ___VARIABLE_sceneIdentifier___View: UIView {
 
+    let controller: ___VARIABLE_sceneIdentifier___ViewController
+
     // MARK: Subview Variable
 
     // MARK: Init Function
@@ -21,7 +23,8 @@ final class ___VARIABLE_sceneIdentifier___View: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init() {
+    init(controller: ___VARIABLE_sceneIdentifier___ViewController) {
+        self.controller = controller
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
         self.addSubviews()
         self.makeConstraints()

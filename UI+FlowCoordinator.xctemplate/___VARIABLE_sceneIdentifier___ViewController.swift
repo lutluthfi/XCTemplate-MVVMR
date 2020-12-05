@@ -15,7 +15,10 @@ import UIKit
 final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
 
     // MARK: - DI Variable
-    private var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
+    lazy var _view: ___VARIABLE_sceneIdentifier___View = {
+        return ___VARIABLE_sceneIdentifier___View(controller: self)
+    }()
+    var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
     // MARK: - Common Variable
 
@@ -51,6 +54,7 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Stor
 
     // MARK: - SetupView By Lifecycle Function
     private func setupViewDidLoad() {
+        self.view = self._view
     }
     
     private func setupViewWillAppear() {
