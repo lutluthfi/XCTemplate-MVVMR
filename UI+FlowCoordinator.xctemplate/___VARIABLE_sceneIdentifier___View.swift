@@ -11,7 +11,7 @@
 
 import UIKit
 
-// MARK: _ ___VARIABLE_sceneIdentifier___View
+// MARK: ___VARIABLE_sceneIdentifier___View
 final class ___VARIABLE_sceneIdentifier___View: UIView {
 
     let controller: ___VARIABLE_sceneIdentifier___ViewController

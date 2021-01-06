@@ -11,61 +11,61 @@
 
 import Foundation
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelResponse
+// MARK: ___VARIABLE_sceneIdentifier___ViewModelResponse
 enum ___VARIABLE_sceneIdentifier___ViewModelResponse {
 }
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelDelegate
+// MARK: ___VARIABLE_sceneIdentifier___ViewModelDelegate
 protocol ___VARIABLE_sceneIdentifier___ViewModelDelegate: class {
 }
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelRequestValue
+// MARK: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
 struct ___VARIABLE_sceneIdentifier___ViewModelRequestValue {
 }
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelRoute
+// MARK: ___VARIABLE_sceneIdentifier___ViewModelRoute
 struct ___VARIABLE_sceneIdentifier___ViewModelRoute {
 }
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelInput
+// MARK: ___VARIABLE_sceneIdentifier___ViewModelInput
 protocol ___VARIABLE_sceneIdentifier___ViewModelInput {
 
     func viewDidLoad()
 
 }
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModelOutput
+// MARK: ___VARIABLE_sceneIdentifier___ViewModelOutput
 protocol ___VARIABLE_sceneIdentifier___ViewModelOutput {
 
     var response: Observable<___VARIABLE_sceneIdentifier___ViewModelResponse?> { get }
 
 }
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewModel
+// MARK: ___VARIABLE_sceneIdentifier___ViewModel
 protocol ___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModelInput,
                                                   ___VARIABLE_sceneIdentifier___ViewModelOutput { }
 
-// MARK: - Default___VARIABLE_sceneIdentifier___ViewModel
+// MARK: Default___VARIABLE_sceneIdentifier___ViewModel
 final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
 
-    // MARK: - DI Variable
+    // MARK: DI Variable
     weak var delegate: ___VARIABLE_sceneIdentifier___ViewModelDelegate?
     let requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
     let route: ___VARIABLE_sceneIdentifier___ViewModelRoute
 
-    // MARK: - UseCase Variable
+    // MARK: UseCase Variable
 
 
 
-    // MARK: - Common Variable
+    // MARK: Common Variable
 
     
 
-    // MARK: - Output ViewModel
+    // MARK: Output ViewModel
     let response = Observable<___VARIABLE_sceneIdentifier___ViewModelResponse?>(nil)
     
 
-    // MARK: - Init Function
+    // MARK: Init Function
     init(
         requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue,
         route: ___VARIABLE_sceneIdentifier___ViewModelRoute
@@ -76,15 +76,10 @@ final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIde
     
 }
 
-// MARK: - Input ViewModel
+// MARK: Input ViewModel
 extension Default___VARIABLE_sceneIdentifier___ViewModel {
     
     func viewDidLoad() {
     }
-    
-}
-
-// MARK: - Private Function
-extension Default___VARIABLE_sceneIdentifier___ViewModel {
     
 }

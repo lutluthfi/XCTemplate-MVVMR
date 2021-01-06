@@ -11,19 +11,19 @@
 
 import UIKit
 
-// MARK: - ___VARIABLE_sceneIdentifier___ViewController
+// MARK: ___VARIABLE_sceneIdentifier___ViewController
 final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
 
-    // MARK: - DI Variable
+    // MARK: DI Variable
     lazy var _view: ___VARIABLE_sceneIdentifier___View = {
         return ___VARIABLE_sceneIdentifier___View(controller: self)
     }()
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
-    // MARK: - Common Variable
+    // MARK: Common Variable
 
 
-    // MARK: - Create Function
+    // MARK: Create Function
     class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___ViewController {
         let vc = ___VARIABLE_sceneIdentifier___ViewController.instantiateViewController()
         vc.viewModel = viewModel
@@ -48,11 +48,11 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Stor
         self.setupViewWillDisappear()
     }
 
-    // MARK: - Bind ViewModel Function
+    // MARK: Bind ViewModel Function
     private func bind(to viewModel: ___VARIABLE_sceneIdentifier___ViewModel) {
     }
 
-    // MARK: - SetupView By Lifecycle Function
+    // MARK: SetupView By Lifecycle Function
     private func setupViewDidLoad() {
         self.view = self._view
     }
@@ -65,7 +65,7 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Stor
     
 }
 
-// MARK: - Observe ViewModel Function
+// MARK: Observe ViewModel Function
 private extension ___VARIABLE_sceneIdentifier___ViewController {
 
 }
