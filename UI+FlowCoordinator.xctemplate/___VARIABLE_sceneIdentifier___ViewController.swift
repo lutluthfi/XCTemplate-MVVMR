@@ -15,9 +15,7 @@ import UIKit
 final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
 
     // MARK: DI Variable
-    lazy var _view: ___VARIABLE_sceneIdentifier___View = {
-        return ___VARIABLE_sceneIdentifier___View(controller: self)
-    }()
+    lazy var _view = ___VARIABLE_sceneIdentifier___View()
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
     // MARK: Common Variable
