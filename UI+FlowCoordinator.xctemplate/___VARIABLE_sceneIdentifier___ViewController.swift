@@ -12,7 +12,7 @@
 import UIKit
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewController
-final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
+final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
 
     // MARK: DI Variable
     lazy var _view = ___VARIABLE_sceneIdentifier___View()
@@ -23,12 +23,12 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Stor
 
     // MARK: Create Function
     class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___ViewController {
-        let vc = ___VARIABLE_sceneIdentifier___ViewController.instantiateViewController()
+        let vc = ___VARIABLE_sceneIdentifier___ViewController()
         vc.viewModel = viewModel
         return vc
     }
 
-    // MARK: - UIViewController Function
+    // MARK: UIViewController Function
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViewDidLoad()
