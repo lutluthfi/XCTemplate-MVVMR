@@ -15,7 +15,12 @@ import UIKit
 final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
 
     // MARK: DI Variable
-    lazy var _view = ___VARIABLE_sceneIdentifier___View()
+    lazy var _view: ___VARIABLE_sceneIdentifier___View = {
+        return ___VARIABLE_sceneIdentifier___View(
+            navigationBar: self.navigationController?.navigationBar,
+            navigationItem: self.navigationItem
+        )
+    }
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
     // MARK: Common Variable
@@ -56,9 +61,11 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
     }
     
     private func setupViewWillAppear() {
+        self._view.viewWillAppear()
     }
     
     private func setupViewWillDisappear() {
+        self._view.viewWillDisappear()
     }
     
 }

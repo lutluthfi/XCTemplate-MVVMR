@@ -14,6 +14,9 @@ import UIKit
 // MARK: ___VARIABLE_sceneIdentifier___View
 final class ___VARIABLE_sceneIdentifier___View: UIView {
 
+    weak var navigationBar: UINavigationBar?
+    weak var navigationItem: UINavigationItem!
+    
     // MARK: Subview Variable
 
     // MARK: Init Function
@@ -21,7 +24,9 @@ final class ___VARIABLE_sceneIdentifier___View: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init() {
+    init(navigationBar: UINavigationBar?, navigationItem: UINavigationItem) {
+        self.navigationBar = navigationBar
+        self.navigationItem = navigationItem
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
         self.addSubviews()
         self.makeConstraints()
@@ -33,4 +38,16 @@ final class ___VARIABLE_sceneIdentifier___View: UIView {
     private func makeConstraints() {
     }
 
+}
+
+extension ___VARIABLE_sceneIdentifier___View {
+    
+    func viewWillAppear() {
+        
+    }
+    
+    func viewWillDisappear() {
+        
+    }
+    
 }
