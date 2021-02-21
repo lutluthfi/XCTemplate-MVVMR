@@ -15,7 +15,12 @@ protocol ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory  {
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___FlowCoordinator
-final class ___VARIABLE_sceneIdentifier___FlowCoordinator {
+protocol ___VARIABLE_sceneIdentifier___FlowCoordinator {
+    func start(with instructor: Instructor)
+}
+
+// MARK: Default___VARIABLE_sceneIdentifier___FlowCoordinator
+final class Default___VARIABLE_sceneIdentifier___FlowCoordinator {
 
     // MARK: Instructor Enum
     enum Instructor {
@@ -26,15 +31,16 @@ final class ___VARIABLE_sceneIdentifier___FlowCoordinator {
     let navigationController: UINavigationController
     let factory: ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory
 
-
     // MARK: Init Funciton
     init(navigationController: UINavigationController, factory: ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory) {
         self.navigationController = navigationController
         self.factory = factory
     }
+    
+}
 
-
-    // MARK: Start Function
+extension Default___VARIABLE_sceneIdentifier___FlowCoordinator: ___VARIABLE_sceneIdentifier___FlowCoordinator {
+    
     func start(with instructor: Instructor) {
     }
     
