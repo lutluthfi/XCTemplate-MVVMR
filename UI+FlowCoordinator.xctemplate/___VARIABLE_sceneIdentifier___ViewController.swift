@@ -20,7 +20,7 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
             navigationBar: self.navigationController?.navigationBar,
             navigationItem: self.navigationItem
         )
-    }
+    }()
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
     // MARK: Common Variable
