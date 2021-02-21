@@ -8,12 +8,15 @@
 
 import UIKit
 
-class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, StoryboardInstantiable {
+final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
     
-    private var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
+    lazy var _view: ___VARIABLE_sceneIdentifier___View = {
+        return ___VARIABLE_sceneIdentifier___View(navigationBar: self.navigationController?.navigationBar, navigationItem: self.navigationItem)
+    }()
+    var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
     
-    class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___ViewController {
-        let vc = ___VARIABLE_sceneIdentifier___ViewController.instantiateViewController()
+    class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___Controller {
+        let vc = ___VARIABLE_sceneIdentifier___Controller()
         vc.viewModel = viewModel
         return vc
     }
@@ -26,16 +29,15 @@ class ___VARIABLE_sceneIdentifier___ViewController: UIViewController, Storyboard
     }
     
     private func bind(to viewModel: ___VARIABLE_sceneIdentifier___ViewModel) {
-        viewModel.route.observe(on: self) { [weak self] in self?.route($0) }
     }
     
     private func setupViewDidLoad() {
-        
+        self.view = self._view
     }
 }
 
 // MARK: - Handle Routing
-extension ___VARIABLE_sceneIdentifier___ViewController {
+extension ___VARIABLE_sceneIdentifier___Controller {
     
     func route(_ route: ___VARIABLE_sceneIdentifier___ViewModelRoute) {
         

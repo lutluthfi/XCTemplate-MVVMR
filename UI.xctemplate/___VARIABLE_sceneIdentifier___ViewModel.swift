@@ -14,7 +14,7 @@ import Foundation
 enum ___VARIABLE_sceneIdentifier___ViewModelResponse {
 }
 
-protocol ___VARIABLE_sceneIdentifier___ViewModelDelegate: class {
+protocol ___VARIABLE_sceneIdentifier___ViewModelDelegate: AnyObject {
 }
 
 struct ___VARIABLE_sceneIdentifier___ViewModelRequestValue {
@@ -32,13 +32,14 @@ protocol ___VARIABLE_sceneIdentifier___ViewModelOutput {
 
 protocol ___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModelInput, ___VARIABLE_sceneIdentifier___ViewModelOutput { }
 
-class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
+final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
 
-    private weak var delegate: ___VARIABLE_sceneIdentifier___ViewModelDelegate?
-    private let requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
-    private let route: ___VARIABLE_sceneIdentifier___ViewModelRoute
+    // MARK: Dependency Variable
+    weak var delegate: ___VARIABLE_sceneIdentifier___ViewModelDelegate?
+    let requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
+    let route: ___VARIABLE_sceneIdentifier___ViewModelRoute
 
-    // MARK: - OUTPUT
+    // MARK: Output ViewModel Variable
 
     init(
         requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue,
@@ -50,7 +51,7 @@ class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifie
 
 }
 
-// MARK: - INPUT
+// MARK: Input ViewModel Function
 extension Default___VARIABLE_sceneIdentifier___ViewModel {
 
     func viewDidLoad() {
@@ -58,7 +59,7 @@ extension Default___VARIABLE_sceneIdentifier___ViewModel {
 
 }
 
-// MARK: - Private Function
+// MARK: Internal Function
 extension Default___VARIABLE_sceneIdentifier___ViewModel {
 
 }

@@ -5,18 +5,18 @@
 	<key>DefaultCompletionName</key>
 	<string>Scene</string>
 	<key>Description</key>
-	<string>This generates a  new scene using MVVM architecture. It consists of the view controller, view model, router and storyboard.</string>
+	<string>This generates a  new UI using MVVM architecture. It consists of the view, the view controller, and the view model.</string>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Options</key>
 	<array>
 		<dict>
 			<key>Description</key>
-			<string>The name of the scene to create</string>
+			<string>The name of the UI to create</string>
 			<key>Identifier</key>
 			<string>sceneName</string>
 			<key>Name</key>
-			<string>New Scene Name:</string>
+			<string>New UI Name:</string>
 			<key>NotPersisted</key>
 			<true/>
 			<key>Required</key>
@@ -38,13 +38,13 @@
 			<key>NotPersisted</key>
 			<true/>
 			<key>Default</key>
-			<string>___VARIABLE_sceneIdentifier___ViewController</string>
+			<string>___VARIABLE_sceneIdentifier___Controller</string>
 			<key>Description</key>
-			<string>The view controller name</string>
+			<string>The controller name</string>
 			<key>Identifier</key>
 			<string>viewControllerName</string>
 			<key>Name</key>
-			<string>View Controller Name:</string>
+			<string>The Controller Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -60,7 +60,7 @@
 			<key>Identifier</key>
 			<string>viewModelName</string>
 			<key>Name</key>
-			<string>ViewModel Name:</string>
+			<string>The ViewModel Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -70,13 +70,13 @@
 			<key>NotPersisted</key>
 			<true/>
 			<key>Default</key>
-			<string>___VARIABLE_sceneIdentifier___ViewController</string>
+			<string>___VARIABLE_sceneIdentifier___View</string>
 			<key>Description</key>
-			<string>The storyboard name</string>
+			<string>The view name</string>
 			<key>Identifier</key>
-			<string>storyboardName</string>
+			<string>viewName</string>
 			<key>Name</key>
-			<string>Storyboard Name:</string>
+			<string>The View Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
