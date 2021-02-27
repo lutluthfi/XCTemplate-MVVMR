@@ -11,12 +11,12 @@
 
 import UIKit
 
-// MARK: ___VARIABLE_sceneIdentifier___ViewController
-final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
+// MARK: ___VARIABLE_sceneIdentifier___Controller
+final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
     // MARK: DI Variable
     lazy var _view: ___VARIABLE_sceneIdentifier___View = {
-        return ___VARIABLE_sceneIdentifier___View(
+        return Default___VARIABLE_sceneIdentifier___View(
             navigationBar: self.navigationController?.navigationBar,
             navigationItem: self.navigationItem
         )
@@ -27,8 +27,8 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
 
 
     // MARK: Create Function
-    class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___ViewController {
-        let vc = ___VARIABLE_sceneIdentifier___ViewController()
+    class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___Controller {
+        let vc = ___VARIABLE_sceneIdentifier___Controller()
         vc.viewModel = viewModel
         return vc
     }
@@ -57,7 +57,7 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
 
     // MARK: SetupView By Lifecycle Function
     private func setupViewDidLoad() {
-        self.view = self._view
+        self.view = (self._view as! UIView)
     }
     
     private func setupViewWillAppear() {
@@ -71,6 +71,6 @@ final class ___VARIABLE_sceneIdentifier___ViewController: UIViewController {
 }
 
 // MARK: Observe ViewModel Function
-private extension ___VARIABLE_sceneIdentifier___ViewController {
+extension ___VARIABLE_sceneIdentifier___Controller {
 
 }
