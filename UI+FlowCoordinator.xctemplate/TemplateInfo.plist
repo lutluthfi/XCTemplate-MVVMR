@@ -34,13 +34,13 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneIdentifier___ViewController</string>
+			<string>___VARIABLE_sceneIdentifier___Controller</string>
 			<key>Description</key>
-			<string>The view controller name</string>
+			<string>The controller name</string>
 			<key>Identifier</key>
 			<string>viewControllerName</string>
 			<key>Name</key>
-			<string>View Controller Name:</string>
+			<string>Controller Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
