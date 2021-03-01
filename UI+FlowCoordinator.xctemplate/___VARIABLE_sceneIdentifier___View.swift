@@ -11,6 +11,11 @@
 
 import UIKit
 
+// MARK: ___VARIABLE_sceneIdentifier___ViewDelegate
+protocol ___VARIABLE_sceneIdentifier___ViewDelegate: AnyObject {
+    
+}
+
 // MARK: ___VARIABLE_sceneIdentifier___ViewInput
 protocol ___VARIABLE_sceneIdentifier___ViewInput {
     func viewWillAppear()
@@ -24,8 +29,7 @@ protocol ___VARIABLE_sceneIdentifier___ViewSubview {
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___View
-protocol ___VARIABLE_sceneIdentifier___View: ___VARIABLE_sceneIdentifier___ViewInput,
-                                             ___VARIABLE_sceneIdentifier___ViewSubview { }
+protocol ___VARIABLE_sceneIdentifier___View: ___VARIABLE_sceneIdentifier___ViewInput, ___VARIABLE_sceneIdentifier___ViewSubview { }
 
 // MARK: Default___VARIABLE_sceneIdentifier___View
 final class Default___VARIABLE_sceneIdentifier___View: UIView {
@@ -34,12 +38,16 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView {
     weak var navigationBar: UINavigationBar?
     weak var navigationItem: UINavigationItem!
 
+    // MARK: DI Variable
+    weak var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate?
+    
     // MARK: Init Function
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(navigationBar: UINavigationBar?, navigationItem: UINavigationItem) {
+    init(delegate: ___VARIABLE_sceneIdentifier___ViewDelegate, navigationBar: UINavigationBar?, navigationItem: UINavigationItem) {
+        self.delegate = delegate
         self.navigationBar = navigationBar
         self.navigationItem = navigationItem
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)

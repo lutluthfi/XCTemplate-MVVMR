@@ -72,5 +72,10 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
 // MARK: Observe ViewModel Function
 extension ___VARIABLE_sceneIdentifier___Controller {
+    
+}
+
+// MARK: ___VARIABLE_sceneIdentifier___ViewDelegate
+extension ___VARIABLE_sceneIdentifier___Controller: ___VARIABLE_sceneIdentifier___ViewDelegate {
 
 }
