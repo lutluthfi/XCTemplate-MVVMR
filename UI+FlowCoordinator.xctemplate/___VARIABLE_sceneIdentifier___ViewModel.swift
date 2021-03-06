@@ -37,13 +37,10 @@ protocol ___VARIABLE_sceneIdentifier___ViewModelInput {
 // MARK: ___VARIABLE_sceneIdentifier___ViewModelOutput
 protocol ___VARIABLE_sceneIdentifier___ViewModelOutput {
 
-    var response: Observable<___VARIABLE_sceneIdentifier___ViewModelResponse?> { get }
-
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewModel
-protocol ___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModelInput,
-                                                  ___VARIABLE_sceneIdentifier___ViewModelOutput { }
+protocol ___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModelInput, ___VARIABLE_sceneIdentifier___ViewModelOutput { }
 
 // MARK: Default___VARIABLE_sceneIdentifier___ViewModel
 final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIdentifier___ViewModel {
@@ -62,7 +59,6 @@ final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIde
     
 
     // MARK: Output ViewModel
-    let response = Observable<___VARIABLE_sceneIdentifier___ViewModelResponse?>(nil)
     
 
     // MARK: Init Function
