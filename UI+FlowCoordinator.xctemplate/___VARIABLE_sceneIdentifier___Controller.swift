@@ -4,10 +4,6 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
-//
-//  Template:
-//  Modified by Arif Luthfiansyah
-//  Created by Oleh Kudinov
 
 import UIKit
 
@@ -16,10 +12,8 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
     // MARK: DI Variable
     lazy var _view: ___VARIABLE_sceneIdentifier___View = {
-        return Default___VARIABLE_sceneIdentifier___View(
-            navigationBar: self.navigationController?.navigationBar,
-            navigationItem: self.navigationItem
-        )
+        return Default___VARIABLE_sceneIdentifier___View(navigationBar: self.navigationController?.navigationBar,
+                                                         navigationItem: self.navigationItem)
     }()
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
@@ -28,12 +22,16 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
     // MARK: Create Function
     class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___Controller {
-        let vc = ___VARIABLE_sceneIdentifier___Controller()
-        vc.viewModel = viewModel
+        let controller = ___VARIABLE_sceneIdentifier___Controller()
+        controller.viewModel = viewModel
         return vc
     }
 
     // MARK: UIViewController Function
+    override func loadView() {
+        self.view = (self._view as! UIView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViewDidLoad()
@@ -57,7 +55,6 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
     // MARK: SetupView By Lifecycle Function
     private func setupViewDidLoad() {
-        self.view = (self._view as! UIView)
     }
     
     private func setupViewWillAppear() {

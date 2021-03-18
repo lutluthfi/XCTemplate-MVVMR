@@ -4,10 +4,6 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
-//
-//  Template:
-//  Modified by Arif Luthfiansyah
-//  Created by Oleh Kudinov
 
 import Foundation
 
@@ -62,10 +58,8 @@ final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIde
     
 
     // MARK: Init Function
-    init(
-        requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue,
-        route: ___VARIABLE_sceneIdentifier___ViewModelRoute
-    ) {
+    init(requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue,
+         route: ___VARIABLE_sceneIdentifier___ViewModelRoute) {
         self.requestValue = requestValue
         self.route = route
     }

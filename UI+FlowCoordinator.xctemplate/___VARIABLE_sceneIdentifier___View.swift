@@ -4,10 +4,6 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
-//
-//  Template:
-//  Modified by Arif Luthfiansyah
-//  Created by Oleh Kudinov
 
 import UIKit
 
@@ -37,7 +33,7 @@ protocol ___VARIABLE_sceneIdentifier___ViewVariable {
 protocol ___VARIABLE_sceneIdentifier___View: ___VARIABLE_sceneIdentifier___ViewFunction, ___VARIABLE_sceneIdentifier___ViewSubview, ___VARIABLE_sceneIdentifier___ViewVariable { }
 
 // MARK: Default___VARIABLE_sceneIdentifier___View
-final class Default___VARIABLE_sceneIdentifier___View: UIView {
+final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_sceneIdentifier___View {
 
     // MARK: Subview Variable
     weak var navigationBar: UINavigationBar?
@@ -55,8 +51,9 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView {
         self.navigationBar = navigationBar
         self.navigationItem = navigationItem
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
-        self.addSubviews()
-        self.makeConstraints()
+        self.subviewDidInit()
+        self.subviewConstraintDidInit()
+        self.viewDidInit()
     }
 
 }
@@ -64,10 +61,14 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView {
 // MARK: Internal Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func addSubviews() {
+    func subviewDidInit() {
     }
     
-    func makeConstraints() {
+    func subviewConstraintDidInit() {
+    }
+    
+    func viewDidInit() {
+        
     }
     
 }
