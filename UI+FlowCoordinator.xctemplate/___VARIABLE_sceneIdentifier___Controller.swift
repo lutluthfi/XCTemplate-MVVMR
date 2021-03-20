@@ -23,7 +23,7 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
     class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___Controller {
         let controller = ___VARIABLE_sceneIdentifier___Controller()
         controller.viewModel = viewModel
-        return vc
+        return controller
     }
 
     // MARK: UIViewController Function
