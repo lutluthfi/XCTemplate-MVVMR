@@ -12,8 +12,7 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
     // MARK: DI Variable
     lazy var _view: ___VARIABLE_sceneIdentifier___View = {
-        return Default___VARIABLE_sceneIdentifier___View(navigationBar: self.navigationController?.navigationBar,
-                                                         navigationItem: self.navigationItem)
+        return Default___VARIABLE_sceneIdentifier___View()
     }()
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
@@ -58,7 +57,8 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
     }
     
     private func setupViewWillAppear() {
-        self._view.viewWillAppear()
+        self._view.viewWillAppear(navigationController: self.navigationController,
+                                  tabBarController: self.tabBarController)
     }
     
     private func setupViewWillDisappear() {
