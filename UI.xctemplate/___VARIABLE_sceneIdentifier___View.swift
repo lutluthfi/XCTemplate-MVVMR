@@ -14,14 +14,12 @@ protocol ___VARIABLE_sceneIdentifier___ViewDelegate: AnyObject {
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewFunction
 protocol ___VARIABLE_sceneIdentifier___ViewFunction {
-    func viewWillAppear()
+    func viewWillAppear(navigationController: UINavigationController?, tabBarController: UITabBarController?)
     func viewWillDisappear()
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewSubview
 protocol ___VARIABLE_sceneIdentifier___ViewSubview {
-    var navigationBar: UINavigationBar? { get }
-    var navigationItem: UINavigationItem! { get }
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewVariable
@@ -36,8 +34,6 @@ protocol ___VARIABLE_sceneIdentifier___View: ___VARIABLE_sceneIdentifier___ViewF
 final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_sceneIdentifier___View {
     
     // MARK: Subview Variable
-    weak var navigationBar: UINavigationBar?
-    weak var navigationItem: UINavigationItem!
     
     // MARK: DI Variable
     weak var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate?
@@ -47,12 +43,10 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(navigationBar: UINavigationBar?, navigationItem: UINavigationItem) {
-        self.navigationBar = navigationBar
-        self.navigationItem = navigationItem
+    init() {
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
-        self.subviewDidInit()
-        self.subviewConstraintDidInit()
+        self.subviewDidAdd()
+        self.subviewConstraintDidMake()
         self.viewDidInit()
     }
     
@@ -61,10 +55,10 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
 // MARK: Internal Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func subviewDidInit() {
+    func subviewDidAdd() {
     }
     
-    func subviewConstraintDidInit() {
+    func subviewConstraintDidMake() {
     }
     
     func viewDidInit() {
@@ -76,7 +70,7 @@ extension Default___VARIABLE_sceneIdentifier___View {
 // MARK: Input Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func viewWillAppear() {
+    func viewWillAppear(navigationController: UINavigationController?, tabBarController: UITabBarController?) {
         
     }
     

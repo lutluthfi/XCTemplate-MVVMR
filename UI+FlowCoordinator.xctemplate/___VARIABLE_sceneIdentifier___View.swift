@@ -45,8 +45,8 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
 
     init() {
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
-        self.subviewDidInit()
-        self.subviewConstraintDidInit()
+        self.subviewDidAdd()
+        self.subviewConstraintDidMake()
         self.viewDidInit()
     }
 
@@ -55,10 +55,10 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
 // MARK: Internal Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func subviewDidInit() {
+    func subviewDidAdd() {
     }
     
-    func subviewConstraintDidInit() {
+    func subviewConstraintDidMake() {
     }
     
     func viewDidInit() {
