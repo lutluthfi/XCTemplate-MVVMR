@@ -7,20 +7,31 @@
 
 import Foundation
 
-public struct ___VARIABLE_entityIdentifier___UseCaseResponseValue {
+public enum ___VARIABLE_entityIdentifier___UseCaseError: LocalizedError {
     
 }
 
-public struct ___VARIABLE_entityIdentifier___UseCaseRequestValue {
+extension ___VARIABLE_entityIdentifier___UseCaseError {
+    
+    public var errorDescription: String? {
+        switch self {
+        }
+    }
+    
+}
+
+public struct ___VARIABLE_entityIdentifier___UseCaseResponse {
+    
+}
+
+public struct ___VARIABLE_entityIdentifier___UseCaseRequest {
 
 }
 
 public protocol ___VARIABLE_entityIdentifier___UseCase {
     
-    func execute(
-        _ requestValue: ___VARIABLE_entityIdentifier___UseCaseRequestValue,
-        completion: @escaping (Result<___VARIABLE_entityIdentifier___UseCaseResponseValue, Error>) -> Void
-    )
+    func execute(_ request: ___VARIABLE_entityIdentifier___UseCaseRequest,
+                 completion: @escaping (Result<___VARIABLE_entityIdentifier___UseCaseResponse, Error>) -> Void)
 
 }
 
@@ -33,10 +44,8 @@ public final class Default___VARIABLE_entityIdentifier___UseCase {
 
 extension Default___VARIABLE_entityIdentifier___UseCase: ___VARIABLE_entityIdentifier___UseCase {
 
-    public func execute(
-        _ requestValue: ___VARIABLE_entityIdentifier___UseCaseRequestValue,
-        completion: @escaping (Result<___VARIABLE_entityIdentifier___UseCaseResponseValue, Error>) -> Void
-    ) {
+    public func execute(_ request: ___VARIABLE_entityIdentifier___UseCaseRequest,
+                        completion: @escaping (Result<___VARIABLE_entityIdentifier___UseCaseResponse, Error>) -> Void) {
         
     }
     
