@@ -16,11 +16,11 @@ protocol ___VARIABLE_sceneIdentifier___ViewModelDelegate: class {
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
-struct ___VARIABLE_sceneIdentifier___ViewModelRequestValue {
+public struct ___VARIABLE_sceneIdentifier___ViewModelRequestValue {
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewModelRoute
-struct ___VARIABLE_sceneIdentifier___ViewModelRoute {
+public struct ___VARIABLE_sceneIdentifier___ViewModelRoute {
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewModelInput

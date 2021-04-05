@@ -47,9 +47,14 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
 
     init() {
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
-        self.subviewDidAdd()
-        self.subviewConstraintDidMake()
+        self.subviewWillAdd()
+        self.subviewConstraintWillMake()
         self.viewDidInit()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.subviewDidLayout()
     }
 
 }
@@ -57,14 +62,16 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
 // MARK: Internal Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func subviewDidAdd() {
+    func subviewWillAdd() {
     }
     
-    func subviewConstraintDidMake() {
+    func subviewConstraintWillMake() {
+    }
+    
+    func subviewDidLayout() {
     }
     
     func viewDidInit() {
-        
     }
     
 }
@@ -75,7 +82,6 @@ extension Default___VARIABLE_sceneIdentifier___View {
     func viewWillAppear(navigationBar: UINavigationBar?,
                         navigationItem: UINavigationItem,
                         tabBarController: UITabBarController?) {
-        
     }
     
     func viewWillDisappear() {
