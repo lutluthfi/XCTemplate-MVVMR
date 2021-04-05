@@ -14,7 +14,9 @@ protocol ___VARIABLE_sceneIdentifier___ViewDelegate: AnyObject {
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewFunction
 protocol ___VARIABLE_sceneIdentifier___ViewFunction {
-    func viewWillAppear(navigationController: UINavigationController?, tabBarController: UITabBarController?)
+    func viewWillAppear(navigationBar: UINavigationBar?,
+                        navigationItem: UINavigationItem,
+                        tabBarController: UITabBarController?)
     func viewWillDisappear()
 }
 
@@ -33,9 +35,9 @@ protocol ___VARIABLE_sceneIdentifier___View: ___VARIABLE_sceneIdentifier___ViewF
 // MARK: Default___VARIABLE_sceneIdentifier___View
 final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_sceneIdentifier___View {
 
-    // MARK: Subview Variable
+    // MARK: ___VARIABLE_sceneIdentifier___ViewSubview
 
-    // MARK: DI Variable
+    // MARK: ___VARIABLE_sceneIdentifier___ViewVariable
     weak var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate?
     
     // MARK: Init Function
@@ -67,10 +69,12 @@ extension Default___VARIABLE_sceneIdentifier___View {
     
 }
 
-// MARK: Input Function
+// MARK: ___VARIABLE_sceneIdentifier___ViewFunction
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func viewWillAppear(navigationController: UINavigationController?, tabBarController: UITabBarController?) {
+    func viewWillAppear(navigationBar: UINavigationBar?,
+                        navigationItem: UINavigationItem,
+                        tabBarController: UITabBarController?) {
         
     }
     

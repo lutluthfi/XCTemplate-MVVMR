@@ -11,9 +11,7 @@ import UIKit
 final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
     // MARK: DI Variable
-    lazy var _view: ___VARIABLE_sceneIdentifier___View = {
-        return Default___VARIABLE_sceneIdentifier___View()
-    }()
+    lazy var _view: ___VARIABLE_sceneIdentifier___View = Default___VARIABLE_sceneIdentifier___View()
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
 
     // MARK: Common Variable
@@ -33,36 +31,24 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViewDidLoad()
         self.bind(to: self.viewModel)
         self.viewModel.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setupViewWillAppear()
+        self._view.viewWillAppear(navigationBar: self.navigationController?.navigationBar,
+                                  navigationItem: self.navigationItem,
+                                  tabBarController: self.tabBarController)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.setupViewWillDisappear()
+        self._view.viewWillDisappear()
     }
 
     // MARK: Bind ViewModel Function
     private func bind(to viewModel: ___VARIABLE_sceneIdentifier___ViewModel) {
-    }
-
-    // MARK: SetupView By Lifecycle Function
-    private func setupViewDidLoad() {
-    }
-    
-    private func setupViewWillAppear() {
-        self._view.viewWillAppear(navigationController: self.navigationController,
-                                  tabBarController: self.tabBarController)
-    }
-    
-    private func setupViewWillDisappear() {
-        self._view.viewWillDisappear()
     }
     
 }
