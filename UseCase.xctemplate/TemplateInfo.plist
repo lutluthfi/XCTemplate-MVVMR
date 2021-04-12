@@ -32,7 +32,7 @@
 			<key>Name</key>
 			<string>UseCase Name:</string>
 			<key>Default</key>
-			<string>___VARIABLE_entityName:identifier___</string>
+			<string>___VARIABLE_entityName:identifier___UseCase</string>
 			<key>Identifier</key>
 			<string>entityIdentifier</string>
 			<key>Type</key>
