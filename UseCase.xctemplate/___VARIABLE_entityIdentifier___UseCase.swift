@@ -4,14 +4,15 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
+//
 
 import Foundation
 
-public enum ___VARIABLE_entityIdentifier___UseCaseError: LocalizedError {
+public enum ___VARIABLE_entityIdentifier___Error: LocalizedError {
     
 }
 
-extension ___VARIABLE_entityIdentifier___UseCaseError {
+extension ___VARIABLE_entityIdentifier___Error {
     
     public var errorDescription: String? {
         switch self {
@@ -20,32 +21,30 @@ extension ___VARIABLE_entityIdentifier___UseCaseError {
     
 }
 
-public struct ___VARIABLE_entityIdentifier___UseCaseResponse {
+public struct ___VARIABLE_entityIdentifier___Response {
     
 }
 
-public struct ___VARIABLE_entityIdentifier___UseCaseRequest {
+public struct ___VARIABLE_entityIdentifier___Request {
 
 }
 
-public protocol ___VARIABLE_entityIdentifier___UseCase {
-    
-    func execute(_ request: ___VARIABLE_entityIdentifier___UseCaseRequest,
-                 completion: @escaping (Result<___VARIABLE_entityIdentifier___UseCaseResponse, Error>) -> Void)
-
+public protocol ___VARIABLE_entityIdentifier___ {
+    func execute(_ request: ___VARIABLE_entityIdentifier___Request,
+                 completion: @escaping (Result<___VARIABLE_entityIdentifier___Response, Error>) -> Void)
 }
 
-public final class Default___VARIABLE_entityIdentifier___UseCase {
+public final class Default___VARIABLE_entityIdentifier___ {
 
     public init() {
     }
 
 }
 
-extension Default___VARIABLE_entityIdentifier___UseCase: ___VARIABLE_entityIdentifier___UseCase {
+extension Default___VARIABLE_entityIdentifier___: ___VARIABLE_entityIdentifier___ {
 
-    public func execute(_ request: ___VARIABLE_entityIdentifier___UseCaseRequest,
-                        completion: @escaping (Result<___VARIABLE_entityIdentifier___UseCaseResponse, Error>) -> Void) {
+    public func execute(_ request: ___VARIABLE_entityIdentifier___Request,
+                        completion: @escaping (Result<___VARIABLE_entityIdentifier___Response, Error>) -> Void) {
         
     }
     

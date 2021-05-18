@@ -4,6 +4,7 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
+//
 
 import Foundation
 
@@ -15,8 +16,8 @@ enum ___VARIABLE_sceneIdentifier___ViewModelResponse {
 protocol ___VARIABLE_sceneIdentifier___ViewModelDelegate: class {
 }
 
-// MARK: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
-public struct ___VARIABLE_sceneIdentifier___ViewModelRequestValue {
+// MARK: ___VARIABLE_sceneIdentifier___ViewModelRequest
+public struct ___VARIABLE_sceneIdentifier___ViewModelRequest {
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewModelRoute
@@ -43,7 +44,7 @@ final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIde
 
     // MARK: DI Variable
     weak var delegate: ___VARIABLE_sceneIdentifier___ViewModelDelegate?
-    let requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue
+    let request: ___VARIABLE_sceneIdentifier___ViewModelRequest
     let route: ___VARIABLE_sceneIdentifier___ViewModelRoute
 
     // MARK: UseCase Variable
@@ -58,9 +59,9 @@ final class Default___VARIABLE_sceneIdentifier___ViewModel: ___VARIABLE_sceneIde
     
 
     // MARK: Init Function
-    init(requestValue: ___VARIABLE_sceneIdentifier___ViewModelRequestValue,
+    init(request: ___VARIABLE_sceneIdentifier___ViewModelRequest,
          route: ___VARIABLE_sceneIdentifier___ViewModelRoute) {
-        self.requestValue = requestValue
+        self.request = request
         self.route = route
     }
     

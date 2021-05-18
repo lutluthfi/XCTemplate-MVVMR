@@ -4,6 +4,7 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
+//
 
 import UIKit
 
@@ -26,6 +27,7 @@ protocol ___VARIABLE_sceneIdentifier___ViewSubview {
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewVariable
 protocol ___VARIABLE_sceneIdentifier___ViewVariable {
+    var asView: UIView { get }
     var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate? { get }
 }
 
@@ -38,6 +40,7 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
     // MARK: ___VARIABLE_sceneIdentifier___ViewSubview
 
     // MARK: ___VARIABLE_sceneIdentifier___ViewVariable
+    lazy var asView: UIView = (self as UIView)
     weak var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate?
     
     // MARK: Init Function

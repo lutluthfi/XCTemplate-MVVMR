@@ -4,6 +4,7 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
+//
 
 import UIKit
 
@@ -26,7 +27,7 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 
     // MARK: UIViewController Function
     override func loadView() {
-        self.view = (self._view as! UIView)
+        self.view = self._view.asView
     }
     
     override func viewDidLoad() {

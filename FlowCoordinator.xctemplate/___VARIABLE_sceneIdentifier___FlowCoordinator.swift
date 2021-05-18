@@ -6,12 +6,10 @@
 //  Copyright (c) ___YEAR___ All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // MARK: ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory
 public protocol ___VARIABLE_sceneIdentifier___FlowCoordinatorFactory  {
-    func make___VARIABLE_sceneIdentifier___ViewController() -> UIViewController
 }
 
 // MARK: ___VARIABLE_sceneIdentifier___FlowCoordinator
