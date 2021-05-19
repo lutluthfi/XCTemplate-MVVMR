@@ -9,10 +9,7 @@ import UIKit
 
 final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
     
-    lazy var _view: ___VARIABLE_sceneIdentifier___View = {
-        return Default___VARIABLE_sceneIdentifier___View(navigationBar: self.navigationController?.navigationBar,
-                                                         navigationItem: self.navigationItem)
-    }()
+    lazy var _view: ___VARIABLE_sceneIdentifier___View = Default___VARIABLE_sceneIdentifier___View()
     var viewModel: ___VARIABLE_sceneIdentifier___ViewModel!
     
     class func create(with viewModel: ___VARIABLE_sceneIdentifier___ViewModel) -> ___VARIABLE_sceneIdentifier___Controller {
@@ -22,7 +19,7 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
     }
     
     override func loadView() {
-        self.view = (self._view as! UIView)
+        self.view = self._view.asView
     }
     
     override func viewDidLoad() {
@@ -43,7 +40,6 @@ final class ___VARIABLE_sceneIdentifier___Controller: UIViewController {
 extension ___VARIABLE_sceneIdentifier___Controller {
     
     func route(_ route: ___VARIABLE_sceneIdentifier___ViewModelRoute) {
-        
     }
     
 }

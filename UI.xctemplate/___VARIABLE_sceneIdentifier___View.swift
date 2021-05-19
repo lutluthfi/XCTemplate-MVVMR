@@ -14,7 +14,9 @@ protocol ___VARIABLE_sceneIdentifier___ViewDelegate: AnyObject {
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewFunction
 protocol ___VARIABLE_sceneIdentifier___ViewFunction {
-    func viewWillAppear(navigationController: UINavigationController?, tabBarController: UITabBarController?)
+    func viewWillAppear(navigationBar: UINavigationBar?,
+                        navigationItem: UINavigationItem,
+                        tabBarController: UITabBarController?)
     func viewWillDisappear()
 }
 
@@ -24,6 +26,7 @@ protocol ___VARIABLE_sceneIdentifier___ViewSubview {
 
 // MARK: ___VARIABLE_sceneIdentifier___ViewVariable
 protocol ___VARIABLE_sceneIdentifier___ViewVariable {
+    var asView: UIView { get }
     var delegate: ___VARIABLE_sceneIdentifier___ViewVariable? { get }
 }
 
@@ -33,9 +36,9 @@ protocol ___VARIABLE_sceneIdentifier___View: ___VARIABLE_sceneIdentifier___ViewF
 // MARK: Default___VARIABLE_sceneIdentifier___View
 final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_sceneIdentifier___View {
     
-    // MARK: Subview Variable
+    // MARK: ___VARIABLE_sceneIdentifier___ViewSubview
     
-    // MARK: DI Variable
+    // MARK: ___VARIABLE_sceneIdentifier___ViewVariable
     weak var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate?
     
     // MARK: Init Function
@@ -45,9 +48,14 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
     
     init() {
         super.init(frame: UIScreen.main.fixedCoordinateSpace.bounds)
-        self.subviewDidAdd()
-        self.subviewConstraintDidMake()
+        self.subviewWillAdd()
+        self.subviewConstraintWillMake()
         self.viewDidInit()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.subviewDidLayout()
     }
     
 }
@@ -55,10 +63,13 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
 // MARK: Internal Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func subviewDidAdd() {
+    func subviewDidLayout() {
     }
     
-    func subviewConstraintDidMake() {
+    func subviewWillAdd() {
+    }
+    
+    func subviewConstraintWillMake() {
     }
     
     func viewDidInit() {
@@ -70,8 +81,9 @@ extension Default___VARIABLE_sceneIdentifier___View {
 // MARK: Input Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
-    func viewWillAppear(navigationController: UINavigationController?, tabBarController: UITabBarController?) {
-        
+    func viewWillAppear(navigationBar: UINavigationBar?,
+                        navigationItem: UINavigationItem,
+                        tabBarController: UITabBarController?) {
     }
     
     func viewWillDisappear() {
