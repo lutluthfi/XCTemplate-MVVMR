@@ -4,15 +4,14 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  Copyright (c) ___YEAR___ All rights reserved.
+//
 
 import UIKit
 
-// MARK: ___VARIABLE_sceneIdentifier___ViewDelegate
 protocol ___VARIABLE_sceneIdentifier___ViewDelegate: AnyObject {
     
 }
 
-// MARK: ___VARIABLE_sceneIdentifier___ViewFunction
 protocol ___VARIABLE_sceneIdentifier___ViewFunction {
     func viewWillAppear(navigationBar: UINavigationBar?,
                         navigationItem: UINavigationItem,
@@ -20,25 +19,23 @@ protocol ___VARIABLE_sceneIdentifier___ViewFunction {
     func viewWillDisappear()
 }
 
-// MARK: ___VARIABLE_sceneIdentifier___ViewSubview
 protocol ___VARIABLE_sceneIdentifier___ViewSubview {
 }
 
-// MARK: ___VARIABLE_sceneIdentifier___ViewVariable
 protocol ___VARIABLE_sceneIdentifier___ViewVariable {
-    var asView: UIView { get }
-    var delegate: ___VARIABLE_sceneIdentifier___ViewVariable? { get }
+    var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate? { get }
 }
 
-// MARK: ___VARIABLE_sceneIdentifier___View
-protocol ___VARIABLE_sceneIdentifier___View: ___VARIABLE_sceneIdentifier___ViewFunction, ___VARIABLE_sceneIdentifier___ViewSubview, ___VARIABLE_sceneIdentifier___ViewVariable { }
+protocol ___VARIABLE_sceneIdentifier___View: UIView,
+                                             ___VARIABLE_sceneIdentifier___ViewFunction,
+                                             ___VARIABLE_sceneIdentifier___ViewSubview,
+                                             ___VARIABLE_sceneIdentifier___ViewVariable { }
 
-// MARK: Default___VARIABLE_sceneIdentifier___View
 final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_sceneIdentifier___View {
     
-    // MARK: ___VARIABLE_sceneIdentifier___ViewSubview
+    // ___VARIABLE_sceneIdentifier___ViewSubview
     
-    // MARK: ___VARIABLE_sceneIdentifier___ViewVariable
+    // ___VARIABLE_sceneIdentifier___ViewVariable
     weak var delegate: ___VARIABLE_sceneIdentifier___ViewDelegate?
     
     // MARK: Init Function
@@ -60,7 +57,6 @@ final class Default___VARIABLE_sceneIdentifier___View: UIView, ___VARIABLE_scene
     
 }
 
-// MARK: Internal Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
     func subviewDidLayout() {
@@ -78,7 +74,6 @@ extension Default___VARIABLE_sceneIdentifier___View {
     
 }
 
-// MARK: Input Function
 extension Default___VARIABLE_sceneIdentifier___View {
     
     func viewWillAppear(navigationBar: UINavigationBar?,
